@@ -1,0 +1,51 @@
+
+
+PS C:\Users\Aditya Kumar> Test-NetConnection 13.126.9.6 -Port 22
+
+
+ComputerName     : 13.126.9.6
+RemoteAddress    : 13.126.9.6
+RemotePort       : 22
+InterfaceAlias   : Wi-Fi
+SourceAddress    : 192.168.124.196
+TcpTestSucceeded : True
+
+
+
+PS C:\Users\Aditya Kumar> ssh ewb-app-a
+The authenticity of host '13.126.9.6 (13.126.9.6)' can't be established.
+ED25519 key fingerprint is SHA256:9JGA/Y1rbz/aexFBDF6Z5r87Qa4ySMY/9ohPS5sNMNQ.
+This host key is known by the following other names/addresses:
+    C:\Users\Aditya Kumar/.ssh/known_hosts:32: 3.108.67.58
+Are you sure you want to continue connecting (yes/no/[fingerprint])?
+Warning: Permanently added '13.126.9.6' (ED25519) to the list of known hosts.
+   ,     #_
+   ~\_  ####_        Amazon Linux 2023
+  ~~  \_#####\
+  ~~     \###|
+  ~~       \#/ ___   https://aws.amazon.com/linux/amazon-linux-2023
+   ~~       V~' '->
+    ~~~         /
+      ~~._.   _/
+         _/ _/
+       _/m/'
+Last login: Fri Oct 23 16:50:39 2026 from 10.10.1.108
+[ec2-user@ip-10-10-2-105 ~]$ hostname
+ip-10-10-2-105.ap-south-1.compute.internal
+[ec2-user@ip-10-10-2-105 ~]$ hostname-I
+-bash: hostname-I: command not found
+[ec2-user@ip-10-10-2-105 ~]$ hostname -I
+10.10.2.105
+[ec2-user@ip-10-10-2-105 ~]$ ping -c 4 10.20.1.108
+PING 10.20.1.108 (10.20.1.108) 56(84) bytes of data.
+64 bytes from 10.20.1.108: icmp_seq=1 ttl=127 time=0.319 ms
+64 bytes from 10.20.1.108: icmp_seq=2 ttl=127 time=0.318 ms
+64 bytes from 10.20.1.108: icmp_seq=3 ttl=127 time=0.311 ms
+64 bytes from 10.20.1.108: icmp_seq=4 ttl=127 time=0.319 ms
+
+--- 10.20.1.108 ping statistics ---
+4 packets transmitted, 4 received, 0% packet loss, time 3160ms
+rtt min/avg/max/mdev = 0.311/0.316/0.319/0.003 ms
+[ec2-user@ip-10-10-2-105 ~]$ exit
+logout
+Connection to 10.10.2.105 closed.
